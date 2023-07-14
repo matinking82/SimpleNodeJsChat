@@ -10,6 +10,9 @@ const app = express()
 app.use(express.json())
 
 //routers
+app.get('/', (req, res) => {
+    res.send('welcome to my chat </br>/user for signup, /user/signin for signin , /messages for send and read messages')
+})
 app.use('/user', authenticationRouter)
 app.use('/messages', protect, messagesRouter)
 
